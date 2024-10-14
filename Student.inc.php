@@ -6,11 +6,11 @@ class Student extends Person{
 
     function __construct($name, $surname) {
         parent::__construct($name, $surname);
+        $this->email = $this->name.$this->surname.'@hogwarts.com';
     }
 
     public function printInfo() {
-        return "Nombre: " . $this->name . "<br>" . 
-               "Apellidos: " . $this->surname . "<br>" . 
+        return "Nombre: " . $this->name . $this->surname . "<br>" . 
                "eMail: " . $this->email . "<br>" . 
                "Curso: " . $this->course . "<br>" . 
                "Notas: " . $this->grades . "<br>";

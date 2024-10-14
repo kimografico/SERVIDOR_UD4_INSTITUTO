@@ -1,7 +1,7 @@
 <?php
 class Persona{
-    private $name ='';
-    private $surname ='';
+    private $name = '';
+    private $surname = '';
     // private $image;
 
     function __construct($name, $surname) {
