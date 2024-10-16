@@ -1,17 +1,27 @@
 <?php
-class Student extends Person{
-    private $email = ''; // por qué no está en la clase padre?
-    private $subjects = '';
+class Teacher extends Person{
+    private $subjects = [];
 
     function __construct($name, $surname) {
         parent::__construct($name, $surname);
     }
 
     public function printInfo() {
+        return parent::__toString() . "<b>Asignaturas:</b><br>" . $this->subjectsNames() . "<br>";
 
     }
     
-    public function addSubject() {
+    public function addSubject($subject) {
+        array_push($this->subjects, $subject);
+    }
+
+    public function subjectsNames() {
+        $subjectsString = '';
+        foreach ($this->subjects as $subject) {
+            $subjectsString .="• " . $subject->getName() . " (" . $subject->getClass() . ')<br>';
+        }
+
+        return rtrim($subjectsString, ', '); // elimino la ultima coma
 
     }
 

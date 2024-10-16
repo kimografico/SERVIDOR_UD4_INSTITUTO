@@ -1,8 +1,8 @@
 <?php
 class Course{
     private $id = '';
-    private $subjects = '';
-    private $students = '';
+    private $subjects = [];
+    private $students = [];
     private $year = '';
 
     function __construct($year) {
@@ -10,25 +10,50 @@ class Course{
         $this->year = $year;
     }
 
-    public function addSubject() {
-        // añade una asignatura a un curso.
+    public function addSubject($subject) {
+        array_push($this->subjects, $subject);
     }
 
-    public function addStudent() {
-        // añade un estudiante a un curso, y el curso al estudiante.
+    public function addStudent($student) {
+        array_push($this->students, $student);
+        $student->setCourse($this);
     }
 
     public function takeExam() {
-        // realiza el examen de una asignatura. 
-        // Pondrá una nota aleatoria entre 0 y 10 a todos los alumnos del curso
-        // en la asignatura proporcionada
+        foreach ($this->subjects as $subject){
+            foreach ($this->students as $student){
+                $grade = rand(0, 10);
+                $student->setGrades($subject, $grade);
+            }
+        }
     }
 
+    public function subjectsNames() {
+        $subjectsString = '';
+        foreach ($this->subjects as $subject) {
+            $subjectsString .= "• " . $subject->getName() . '<br>';
+        }
+
+        return rtrim($subjectsString, ', '); // elimino la ultima coma
+
+    }
+
+    public function studentsNames() {
+        $studentsString = '';
+        foreach ($this->students as $student) {
+            $studentsString .= "• " . $student->getFullName() . '<br>';
+        }
+
+        return rtrim($studentsString, ', '); // elimino la ultima coma
+
+    }
+
+
     public function printInfo() {
-        return "ID: " . $this->id . "<br>" . 
-               "Año: " . $this->year . "<br>" . 
-               "Asignaturas: " . $this->subjects . "<br>" . 
-               "Estudiantes: " . $this->students . "<br>";
+        return "<b>Curso:</b> " . $this->id . "<br>" . 
+               "<b>Año:</b> " . $this->year . "<br>" . 
+               "<b>Asignaturas:</b><br> " . $this->subjectsNames() . 
+               "<b>Estudiantes:</b><br> " . $this->studentsNames() . "<br>";
     }
 
 }
