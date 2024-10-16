@@ -28,7 +28,7 @@ b {
     border: 3px solid grey;
     position: relative;
     left: 50px;
-    
+    background-color: #DDD;
     max-width: 450px;
 }
 
@@ -43,4 +43,20 @@ div:hover{
     transition: 0.25s;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.75);
     transform: scale(1.03);
+}
+
+.avatar{
+    position: absolute;
+    left: 500px;
+}
+.teacher .avatar{
+    left: 405px;
+    top: -15px;
+    border-radius: 25px;
+}
+.student .avatar{
+    height: 100px;
+    left: 373px;
+    top: 0px;
+    border-radius: 0 10px;
 }
