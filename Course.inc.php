@@ -50,10 +50,10 @@ class Course{
 
 
     public function printInfo() {
-        return "<b>Curso:</b> " . $this->id . "<br>" . 
+        return "<div class='course'><b>Curso:</b> " . $this->id . "<br>" . 
                "<b>Año:</b> " . $this->year . "<br>" . 
                "<b>Asignaturas:</b><br> " . $this->subjectsNames() . 
-               "<b>Estudiantes:</b><br> " . $this->studentsNames() . "<br>";
+               "<b>Estudiantes:</b><br> " . $this->studentsNames() . "</div>";
     }
 
 }

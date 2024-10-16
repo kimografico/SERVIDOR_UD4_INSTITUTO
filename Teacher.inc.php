@@ -7,7 +7,7 @@ class Teacher extends Person{
     }
 
     public function printInfo() {
-        return parent::__toString() . "<b>Asignaturas:</b><br>" . $this->subjectsNames() . "<br>";
+        return parent::__toString() . "<b>Asignaturas:</b><br>" . $this->subjectsNames();
 
     }
     

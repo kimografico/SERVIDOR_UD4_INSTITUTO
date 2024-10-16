@@ -33,9 +33,11 @@
 
         $course1997->takeExam($potions);
         $course1997->takeExam($defensa);
-        echo str_replace('\n', '<br>', $course1997->printInfo()).'<br><br>';
-        echo str_replace('\n', '<br>', $severusSnape->printInfo()).'<br><br>';
-        echo str_replace('\n', '<br>', $harryPotter->printInfo()).'<br><br>';
+        echo str_replace('\n', '<br>', $course1997->printInfo()).'<br>';
+        echo str_replace('\n', '<br>', '<div class="teacher">' . $severusSnape->printInfo()).'</div><br>';
+        echo str_replace('\n', '<br>', '<div class="student">' . $harryPotter->printInfo()).'</div><br>';
+        echo str_replace('\n', '<br>', '<div class="student">' . $hermioneGranger->printInfo()).'</div><br>';
+        echo str_replace('\n', '<br>', '<div class="student">' . $ronWeasley->printInfo()).'</div><br>';
         
     ?>
 </body>

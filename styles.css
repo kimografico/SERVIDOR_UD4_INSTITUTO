@@ -1,3 +1,46 @@
 body{
     font-family: sans-serif;
+    background: #CCC;
+    margin: 50px;
+}
+
+div {
+    padding: 20px;
+    background-color:white;
+    border-radius: 10px;
+    max-width: 500px;
+    line-height: 25px;
+    transition: 0.25s;
+}
+
+b {
+    color: darkblue;
+
+}
+
+.course {
+    background-color:antiquewhite;
+    font-size: 18px;
+    border: 3px solid grey;
+}
+
+.teacher {
+    border: 3px solid grey;
+    position: relative;
+    left: 50px;
+    
+    max-width: 450px;
+}
+
+.student{
+    position: relative;
+    left: 100px;
+    
+    max-width: 400px;
+}
+
+div:hover{
+    transition: 0.25s;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.75);
+    transform: scale(1.03);
 }
